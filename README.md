@@ -1,6 +1,7 @@
 # Peer-to-Peer-File-sharing
 Peer to peer file sharing network implemented in python.
-he file owner has a file, and it breaks the file into chunks of 100KB, each stored as a separate file. Note that the last chunk can be smaller than 100KB. The minimum number of chunks that the file can be split into is 5. The file owner listens on a TCP port. It should be designed as a server that can run multiple threads to serve multiple clients simultaneously.
+
+The file owner has a file, and it breaks the file into chunks of 100KB, each stored as a separate file. Note that the last chunk can be smaller than 100KB. The minimum number of chunks that the file can be split into is 5. The file owner listens on a TCP port. It should be designed as a server that can run multiple threads to serve multiple clients simultaneously.
 
 Each peer should be able to connect to the file owner to download some chunks. It then should have two threads of control, one acting as a server that uploads the local chunks to another peer (referred to as upload neighbor), and the other acting as a client that downloads chunks from a third peer (referred to as download neighbor).
 So each peer has two neighbors, one of which will get the chunks from this peer and another one will send chunks to this peer.
